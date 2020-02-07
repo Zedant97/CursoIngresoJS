@@ -23,7 +23,7 @@ function sumar()
     resultado = numeroparseado1 + numeroparseado2;
 
     //muestreo de datos
-    alert(resultado);
+    alert("el resulta es " + resultado);
     
 }
 
@@ -48,7 +48,7 @@ function restar()
     resultado = numeroparseado1 - numeroparseado2;
 
     //muestreo de datos
-    alert(resultado);
+    alert("el resulta es " + resultado);
 	
 }
 
@@ -73,7 +73,7 @@ function multiplicar()
     resultado = numeroparseado1 * numeroparseado2;
 
     //muestreo de datos
-    alert(resultado);
+    alert("el resulta es " + resultado);
 	
 }
 
@@ -98,6 +98,6 @@ function dividir()
     resultado = numeroparseado1 / numeroparseado2;
 
     //muestreo de datos
-    alert(resultado);
+    alert("el resulta es " + resultado);
 }
 

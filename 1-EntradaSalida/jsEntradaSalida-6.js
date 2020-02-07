@@ -20,7 +20,7 @@ function sumar()
     resultado = suma;
     
     //muestreo
-    alert(resultado);
+    alert("el resultado es " + resultado);
 
 
 }
