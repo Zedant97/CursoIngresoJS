@@ -4,6 +4,9 @@
 */
 function mostrar()
 {
+	var nombre;
+	nombre = prompt("que onda?");
+	document.getElementById("elNombre").value = nombre;
 
 }
 
