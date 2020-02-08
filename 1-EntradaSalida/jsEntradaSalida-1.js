@@ -7,4 +7,3 @@ function mostrar()
 	insulto = "puto el que lo lee"
 	alert(insulto);
 }
-

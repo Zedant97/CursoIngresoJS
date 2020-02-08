@@ -7,7 +7,7 @@ function mostrar()
     var concatenado;
     nombre = document.getElementById("elNombre").value;
 	edad = document.getElementById("laEdad").value;
-    concatenado = "te llamas " + nombre + " y tenes " + edad;
+    concatenado = "ne llamo " + nombre + " y tengo " + edad;
     alert(concatenado);
 }
 
