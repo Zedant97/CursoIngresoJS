@@ -8,7 +8,73 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
+
+ //declaracion de variables 
+ var lamparas;
+ var lamparasparseado;
+ var resultado;
+ var marca;
+ var precio = 35;
+ var D50 = 0.5;
+ var D40 = 0.6;
+ var D30 = 0.7;
+ var D25 = 0.75;
+ var D20 = 0.8;
+ var D15 = 0.85;
+ var D10 = 0.9;
+ var D5 = 0.95;
 function CalcularPrecio () 
 {
- 	
+     //punto A. tomo valor por ID
+     lamparas = document.getElementById("Cantidad").value;
+     marca = document.getElementById("Marca").value;
+
+     //parseo de datos
+     lamparasparseado = parseInt(lamparas);
+
+     //operaciones y muestreo de datos
+     if (lamparas >= 6) {
+        resultado = lamparasparseado * precio * D50;
+        document.getElementById("precioDescuento").value = resultado;
+     } else {
+         resultado = lamparasparseado * precio;
+         document.getElementById("precioDescuento"). value = resultado;
+     }
+
+     //punto B. operaciones y muestreo
+     if (lamparas == 5) {
+         if (marca == "ArgentinaLuz") {
+             resultado = lamparasparseado * precio * D40;
+             document.getElementById("precioDescuento").value = resultado;
+         } else {
+             resultado = lamparasparseado * precio * D30;
+             document.getElementById("precioDescuento").value = resultado;
+
+         }
+     }
+     //punto C. operaciones y muestreo
+     if (lamparas ==  4) {
+         if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
+             resultado = lamparasparseado * precio * D25;
+             document.getElementById("precioDescuento").value = resultado;
+         } else {
+             resultado = lamparasparseado * precio * D20;
+             document.getElementById("precioDescuento").value = resultado;
+         }
+     }
+     //punto D. operaciones y muestreo
+     if (lamparas == 3) {
+         if (marca == "ArgentinaLuz"){
+             resultado = lamparasparseado * precio * D15;
+             document.getElementById("precioDescuento").value = resultado;
+         } else {
+             if (marca == "FelipeLamparas") {
+                 resultado = lamparasparseado * precio * D10;
+                 document.getElementById("precioDescuento").value = resultado;
+             } else {
+                 resultado = lamparasparseado * precio * D5;
+                 document.getElementById("precioDescuento").value = resultado;
+             }
+         }
+     }
 }
