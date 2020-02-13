@@ -14,6 +14,9 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  var lamparasparseado;
  var resultado;
  var marca;
+ var ingbruto;
+ var ingbrutoT;
+ var ingbrutoTparseado;
  var precio = 35;
  var D50 = 0.5;
  var D40 = 0.6;
@@ -32,32 +35,58 @@ function CalcularPrecio ()
      //parseo de datos
      lamparasparseado = parseInt(lamparas);
 
-     //operaciones y muestreo de datos
+     //operaciones y muestreo de datos. tambien le incorporamos el punto E
      if (lamparas >= 6) {
+        //realizo el descuento del 50%
         resultado = lamparasparseado * precio * D50;
         document.getElementById("precioDescuento").value = resultado;
+        if (resultado > 120) {
+            //calculo el total agregandole el 10% de IIBB
+            ingbrutoT = resultado * 1.1;
+            ingbrutoTparseado = parseInt(ingbrutoT);
+            //calculo el 10% del total para poder mostrarlo el alert
+            ingbruto = resultado * 0.1;
+            //muestreo de resultados
+            document.getElementById("precioDescuento").value = ingbrutoTparseado;
+            alert("IIBB que usted pago es de $" + ingbruto);
+        }
      } else {
          resultado = lamparasparseado * precio;
          document.getElementById("precioDescuento"). value = resultado;
      }
 
-     //punto B. operaciones y muestreo
+     //punto B. operaciones y muestreo. tambien le incorporamos el punto E
      if (lamparas == 5) {
          if (marca == "ArgentinaLuz") {
+             //realizo el descuento del 40%
              resultado = lamparasparseado * precio * D40;
              document.getElementById("precioDescuento").value = resultado;
          } else {
+             //realizo el descuento del 30%
              resultado = lamparasparseado * precio * D30;
              document.getElementById("precioDescuento").value = resultado;
+             if (resultado > 120) {
+                //calculo el total agregandole el 10% de IIBB
+                ingbrutoT = resultado * 1.1;
+                ingbrutoTparseado = parseInt(ingbrutoT);
+                //calculo el 10% del total para poder mostrarlo en alert
+                ingbruto = resultado * 0.1;
+                //muestreo de resultados
+                document.getElementById("precioDescuento").value = ingbrutoTparseado;
+                alert("IIBB que usted pago es de $" + ingbruto);
+            }
+             
 
          }
      }
      //punto C. operaciones y muestreo
      if (lamparas ==  4) {
          if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
+             //realizo el descuento del 25%
              resultado = lamparasparseado * precio * D25;
              document.getElementById("precioDescuento").value = resultado;
          } else {
+             //realizo el descuento del 20%
              resultado = lamparasparseado * precio * D20;
              document.getElementById("precioDescuento").value = resultado;
          }
@@ -65,16 +94,21 @@ function CalcularPrecio ()
      //punto D. operaciones y muestreo
      if (lamparas == 3) {
          if (marca == "ArgentinaLuz"){
+             //realizo el descuento del 15%
              resultado = lamparasparseado * precio * D15;
              document.getElementById("precioDescuento").value = resultado;
          } else {
              if (marca == "FelipeLamparas") {
+                 //realizo el descuento del 10%
                  resultado = lamparasparseado * precio * D10;
                  document.getElementById("precioDescuento").value = resultado;
              } else {
+                 //realizo el descuento del 5%
                  resultado = lamparasparseado * precio * D5;
                  document.getElementById("precioDescuento").value = resultado;
              }
          }
      }
+     
+     
 }
