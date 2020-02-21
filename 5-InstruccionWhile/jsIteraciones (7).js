@@ -3,9 +3,11 @@ function mostrar()
 
 	var contador=0;
 	var acumulador=0;
-	var respuesta='si';
-
-	while(true) {
+	var respuesta;
+	var iterador = 0;
+	respuesta = prompt("cuantos datos queres ingresar?");
+	iterador = parseInt(respuesta);
+	while(iterador == respuesta) {
 		contador ++;
 		var numero = prompt("ingrese un numero valido");
 		numero = parseInt(numero);
@@ -15,13 +17,14 @@ function mostrar()
 		}
 
 		acumulador += numero;
-		respuesta = prompt("queres salir?");
-		if(respuesta == "no") {
-			continue;
 
-		} else {
+		if(contador == respuesta) {
 			break;
-		}
+		}	
+		console.log(contador);
+		/*if (respuesta == null) {
+			break;
+		}*/
 	}
 
 
