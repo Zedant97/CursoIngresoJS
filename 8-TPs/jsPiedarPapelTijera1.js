@@ -5,14 +5,12 @@ El jugador seleccionará una imagen correspondiente
 a su opción  y le informaremos si ganó, empató o perdió.
 */
 var eleccionMaquina;
-var eleccionparseado;
-var tijera;
-
-
+var randomparseado;
 function comenzar()
 {
     eleccionMaquina = Math.random() * 3 + 1;
-    eleccionparseado = parseInt(eleccionMaquina);
+    randomparseado = parseInt(eleccionMaquina);
+
 	
 
 
@@ -20,45 +18,51 @@ function comenzar()
 
 function piedra ()
 {
-    var piedra = 1
-    if (piedra < eleccionparseado) {
-        alert("perdiste!");
-    } else {
-        if (piedra > eleccionparseado) {
-            alert("Ganaste!");
-        } else {
-            alert("empataste!");
-        }
-    }
+
+	switch(randomparseado) {
+        case 1:
+            alert("Empataste!");
+            break;
+        case 2:
+            alert("Perdiste!!");
+            break;
+        case 3:
+            alert("Ganaste!!");
+
 
 }//FIN DE LA FUNCIÓN
+}
 function papel()
 {
-    var papel = 2
-    if (papel < eleccionparseado) {
-        alert("perdiste!");
-    } else {
-        if (papel > eleccionparseado) {
-            alert("ganaste!");
-        } else {
-            alert("empataste!");
-        }
+
+    switch(randomparseado) {
+        case 1:
+            alert("Ganaste!");
+            break;
+        case 2:
+            alert("Empataste!!");
+            break;
+        case 3:
+            alert("Perdiste!!");
+
     }
 
 }//FIN DE LA FUNCIÓN
 
 function tijera()
 {
-    var tijera = 3;
-    if (tijera >= eleccionparseado) {
-        alert("perdiste!");
-    } else {
-        if (tijera > eleccionparseado) {
-            alert("ganaste!");
-        } else {
-            alert("empataste!");
-        }
+
+    switch(randomparseado) {
+        case 1:
+            alert("Perdiste!");
+            break;
+        case 2:
+            alert("Ganaste!!");
+            break;
+        case 3:
+            alert("Empataste!!");
     }
+	
 
 
 }//FIN DE LA FUNCIÓN
