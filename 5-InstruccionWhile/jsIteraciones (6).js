@@ -6,9 +6,13 @@ function mostrar()
 
 	//iniciamos bucle
 	while (contador < 5){
+		
 		contador ++;
 		//tomamos datos por prompt
 		var numero = prompt("ingrese numero");
+		if (numero == null) {
+		break;
+		}
 		
 		//validar
 		numero = parseInt(numero);
@@ -18,10 +22,13 @@ function mostrar()
 
 		}
 		
+		
 		//acumulador
 		acumulador += numero;
+
 		
 	}
+	
 
 
 //muestreo de datos
