@@ -18,7 +18,7 @@ var random3parseado;
 
 function comenzar()
 {
-    temporizador = setInterval(Responder, 4000);
+    temporizador = setTimeout(Responder, 4000);
 
     random = Math.random() * 10 + 1;
     randomparseado = parseInt(random);
@@ -53,21 +53,24 @@ function comenzar()
 
 
     }
+    
     document.getElementById("Operador").value = operadorR;
 
 
 }//FIN DE LA FUNCIÓN
 function Responder()
 {
-
+    
     respuestaingresada = document.getElementById("Respuesta").value;
 
     if (respuestaingresada == respuesta) {
         alert("ganaste!");
+        comenzar();
 
     } else {
         
         alert("perdiste!");
+        comenzar();
     }
 
 
