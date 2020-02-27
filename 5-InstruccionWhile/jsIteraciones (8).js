@@ -1,18 +1,18 @@
 function mostrar()
 {
 
-	var contador=0;
-	var positivo=0;
-	var negativo=1;
+	var contador = 0;
+	var positivo = 0;
+	var negativo = 1;
 	
-	var contador=0;
-	var acumulador=0;
+	//var contador=0;
+	//var acumulador=0;
 	var respuesta;
-	var iteracion = 0;
+	var iteracion;
 	respuesta = prompt("cuantos datos queres tomar?");
 	iteracion = parseInt(respuesta);
 
-	while(iteracion == respuesta) {
+	/*while(iteracion == respuesta) {
 		contador ++;
 		var numero = prompt("ingrese un numero valido");
 		numero = parseInt(numero);
@@ -28,9 +28,9 @@ function mostrar()
 		}
 
 
-	}
+	}*/
 
-	while(iterador == respuesta) {
+	while(iteracion == respuesta) {
 		contador ++;
 		var numeros = prompt("ingrese numeros validos!");
 		
@@ -51,12 +51,12 @@ function mostrar()
 
 		if (numeros < 0) {
 			negativo *= numeros;
-			contador2 ++;
+			//contador2 ++;
 		} else {
 			positivo += numeros;
 		}
 
-		if (contador == respuesta) {
+		if (contador == iteracion) {
 			break;
 		}
 
@@ -68,7 +68,7 @@ function mostrar()
 		negativo = 0;
 	}
 
-document.getElementById('suma').value=positivo;
-document.getElementById('producto').value=negativo;
-
+	
+	document.getElementById("producto").value = negativo;
+	document.getElementById("suma").value = "hola";
 }//FIN DE LA FUNCIÓN
