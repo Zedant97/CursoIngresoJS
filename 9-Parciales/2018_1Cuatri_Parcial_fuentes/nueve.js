@@ -1,3 +1,4 @@
+//declaro las variables
 var peso;
 var temperatura;
 var marca;
@@ -17,12 +18,15 @@ var acumuladorPeso = 0;
 
 function mostrar()
 {
+    //inica bucle
     do {
 
+        //verifico que sea una marca
         do {
             marca = prompt("ingrese la marca");
         } while (!isNaN(marca));
-
+            
+        //verifico que sea un peso valido
         do {
             peso = prompt("ingrese el peso");
             peso = parseInt(peso);
@@ -30,14 +34,16 @@ function mostrar()
 
         } while (isNaN(peso) || peso < 1 || peso > 100);
 
+        //verifico que sea una temperatura valida
         do {
             temperatura = prompt("ingrese la temperatura");
             temperatura = parseInt(temperatura);
         } while (isNaN(temperatura) || temperatura < -30 || temperatura > 30);
 
+        //pregunto si quiero seguir colocando datos
         respuesta = confirm("desea continuar ingresando datos?");
 
-        //punto A
+        //punto A y C
         if (temperatura % 2 == 0) {
             CantTempPares ++;
         }
@@ -66,11 +72,10 @@ function mostrar()
         }
 
         //punto D
+        CantPeso ++
+        acumuladorPeso += peso;
 
-        if (peso != 0) {
-            CantPeso ++
-            acumuladorPeso += peso;
-        }
+        
 
 
 
@@ -78,6 +83,7 @@ function mostrar()
 
     promedioPeso = acumuladorPeso / CantPeso;
 
+    //muestreo de datos
     document.write("La cantidad de Temperaturas pares son: " + CantTempPares + "<br>");
     document.write("La marca del producto mas pesado es: " + marcaMax + "<br>");
     document.write("La cantidad de productos que se conservan a menos de 0 grados son: " + CantDeProdBajoCero + "<br>");

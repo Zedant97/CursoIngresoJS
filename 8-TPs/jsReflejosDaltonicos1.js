@@ -11,7 +11,8 @@ var tiempofinal;
 var tiempototal;
 function comenzar()
 {
-    random = Math.random() * 10 + 1;
+    tiempoInicio = new Date();
+    random = Math.random() * 6 + 1;
     random = parseInt(random);
     console.log(random);
 
@@ -46,8 +47,13 @@ function comenzar()
 }//FIN DE LA FUNCIÓN
 function Responder(colorParametro)
 {
+    tiempofinal = new Date();
+    tiempototal = tiempofinal - tiempoInicio;
+    tiempototal = parseInt(tiempototal / 1000) ;
+
 	if(colorParametro == ColorElegido) {
-        alert("Ganaste");
+        
+        alert("Ganaste!... tardaste " + tiempototal + " segundos");
         comenzar();
 
     }

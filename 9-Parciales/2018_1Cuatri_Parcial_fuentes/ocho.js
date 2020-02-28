@@ -35,20 +35,16 @@ function mostrar()
 
         if (numero % 2 == 0) {
             cantidadPares ++;
-        }
-
-        if (numero % 2 != 0) {
-            cantidadImpares ++;
-        }
-
-        if (numero == 0) {
+        } else if (numero == 0) {
             cantidadCeros ++;
+        } else {
+            cantidadImpares ++;
         }
 
         if (numero > 0) {
             cantidadPos ++;
             acumuladorPos += numero;
-        } else {
+        } else if (numero < 0) {
             acumuladorNeg += numero;
         }
 
@@ -70,13 +66,18 @@ function mostrar()
             }
         }
 
+       
 
 
         respuesta = confirm("queres continuar?");
 
     } while (respuesta);
 
-    promedioPos = acumuladorPos / cantidadPos;
+    if (cantidadPos != 0) {
+        promedioPos = acumuladorPos / cantidadPos;
+    } else {
+        promedioPos = 0;
+    }
 
     document.write("la cantidad de pares es " + cantidadPares + "<br>");
     document.write("la cantidad de impares es " + cantidadImpares + "<br>");

@@ -11,17 +11,23 @@ var sexodenotabaja;
 
 function mostrar()
 {
-    while (contador < 5){
+    do {
         contador ++;
         console.log(contador);
         do {
         nota = prompt("ingrese la nota");
+        if (nota == null) {
+            break;
+        }
         nota = parseInt(nota);
         
         } while (isNaN(nota) || nota < 0 || nota > 10);
 
         do {
             sexo = prompt("que sexo es?");
+            if (sexo == null) {
+                break;
+            }
             
         } while (sexo.toLowerCase() != "f" && sexo.toLowerCase() != "m");
 
@@ -47,11 +53,11 @@ function mostrar()
             
         }
 
-    }
+    } while (contador < 5);
 
     //punto A
     promedio = acumuladordenotas / contador;
-    alert(promedio);
-    alert("la cantidad de varones con una nota igual o mayor a 6 es " + contadorvarones);
-    alert("la nota minima es " + notaminima + " y es " + sexodenotabaja);
+    alert("el promedio de las notas es: " + promedio);
+    alert("la cantidad de varones con una nota igual o mayor a 6 es: " + contadorvarones);
+    alert("la nota minima es: " + notaminima + " y es: " + sexodenotabaja);
 }
